@@ -1,0 +1,60 @@
+<!-- product-add.component.html -->
+
+<div class="card">
+        <div class="card-body">
+          <form [formGroup]="formProduct" novalidate (ngSubmit)="addProduct()">
+            <div class="form-group">
+             <label for="productname">ProductName:</label>
+              <input type="text" class="form-control" 
+                formControlName="productname" 
+                #productname />
+            </div>
+            <div *ngIf="formProduct.controls['productname'].invalid && (formProduct.controls['productname'].dirty || formProduct.controls['productname'].touched)" class="alert alert-danger">
+              <div *ngIf="formProduct.controls['productname'].errors.required">
+                This field is required.
+              </div>
+            </div>
+            <div class="form-group">
+             <label for="description">ProductDescription:</label>
+              <input type="text" class="form-control" 
+              formControlName="productdesc" 
+              #productdesc>
+            </div>
+            <div *ngIf="formProduct.controls['productdesc'].invalid && (formProduct.controls['productdesc'].dirty || formProduct.controls['productdesc'].touched)" class="alert alert-danger">
+              <div *ngIf="formProduct.controls['productdesc'].errors.required">
+                    This field is required.
+              </div>
+            </div>
+            <div class="form-group">
+                    <label for="productmfg">ProductDate:</label>
+                    <input type="date" class="form-control" 
+                      formControlName="productmfg" 
+                      #productmfg
+                    />
+                  </div>
+                  <div *ngIf="formProduct.controls['productmfg'].invalid && (formProduct.controls['productmfg'].dirty || formProduct.controls['productmfg'].touched)" class="alert alert-danger">
+                    <div *ngIf="formProduct.controls['productmfg'].errors.required">
+                            This field is required.
+                    </div>
+                  </div>
+            <div class="form-group">
+              <label for="price">ProductPrice:</label>
+              <input type="text" class="form-control" 
+                formControlName="productprice" 
+                #productprice
+              />
+            </div>
+            <div *ngIf="formProduct.controls['productprice'].invalid && (formProduct.controls['productprice'].dirty || formProduct.controls['productprice'].touched)" class="alert alert-danger">
+              <div *ngIf="formProduct.controls['productprice'].errors.required">
+                    This field is required.
+              </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"
+                [disabled]="formProduct.pristine || formProduct.invalid" >
+                  Add Product
+                </button>
+            </div>
+          </form>
+        </div>
+      </div>

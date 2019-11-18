@@ -1,0 +1,29 @@
+<form [formGroup]="formProduct" (ngSubmit)="updateProduct()">
+    <input type="hidden" #ProductID [(ngModel)]="product.pro_id" formControlName="pro_id">
+        <div class="form-group">
+            <label for="pro_name">ProductName:</label>
+            <input #pro_name [(ngModel)]="product.pro_name" type="text" class="form-control" formControlName="pro_name">
+           
+        </div>
+        <div class="form-group">
+                <label for="pro_desc">ProductDescription:</label>
+                <input  #pro_desc [(ngModel)]="product.pro_desc"  type="text" class="form-control" formControlName="pro_desc">
+               
+            </div>
+            <div class="form-group">
+                    <label for="pro_mfg">ProductDate:</label>
+                    <input  #pro_mfg [(ngModel)]="product.productdate" type="date" class="form-control" formControlName="pro_mfg">
+                   
+            </div>
+            <div class="form-group">
+                <label for="pro_price">ProductPrice:</label>
+                <input  #pro_price [(ngModel)]="product.pro_price" type="number" class="form-control" formControlName="pro_price">
+                       
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </div>
+            
+ 
+</form>
+
